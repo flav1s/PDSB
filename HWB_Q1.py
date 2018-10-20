@@ -21,8 +21,8 @@ plt.show()
 
 ##NOISE
   
-limitesuperior = 5.0
-limiteinferior = -5.0
+limitesuperior = 2.5
+limiteinferior = -2.5
 numeropontos = 450
  
 noise= np.random.uniform(low=limiteinferior, high=limitesuperior, size=numeropontos)
