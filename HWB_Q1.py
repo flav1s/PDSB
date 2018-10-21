@@ -52,7 +52,18 @@ def autocorrelate(signal):
             if (n+j) < len(signal):
                 result[j] += (norm[n]*norm[n+j])
     #result = result/(len(signal)*var)
+
     return result
+
+# Coeficiente de Correlacao
+def coef_corr(s1,s2, s_names):
+    # Covariancia
+    cov = ((np.sum(np.multiply(s1,s2)))-(np.multiply(np.sum(s1),np.sum(s2)))/len(s1))/len(s1)
+    # Coeficiente
+    cc = cov/(np.std(s1)*np.std(s2))
+    print ("CC_" + s_names + " = " + str(cc))
+    return cc
+    
 
 # Figure
 plt.figure(0)
@@ -76,6 +87,17 @@ plt.plot(x, signal_1)
 plt.ylabel("Sinal+Ruido")
 #
 plt.show(False)
+
+# Coeficiente de Correlação
+# Sinal x Sinal
+coef_corr(y,y, "SinalxSinal")
+# Sinal x Sinal+Ruido
+coef_corr(y,signal_1, "SinalxSinal+Ruido")
+# Sinal+Ruido x Sinal+Ruido
+coef_corr(signal_1,signal_1, "Sinal+RuidoxSinal+Ruido")
+# Sinal+Ruido x Sinal
+coef_corr(signal_1,y, "Sinal+RuidoxSinal")
+
 
 # Figure
 plt.figure(1)
