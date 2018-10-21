@@ -2,6 +2,7 @@
 
 
 Homework B - Processamento de Sinais Biomédicos
+
 Q1 - Aplicar autocorrelação para detecção de sinais na presença de ruído:
   - x1 = senóide 1Vpp, 17Hz
   - x2 = ruído aleatório, 5Vpp
