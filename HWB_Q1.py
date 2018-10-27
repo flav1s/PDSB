@@ -88,7 +88,7 @@ plt.ylabel("Sinal+Ruido")
 #
 plt.show(False)
 
-# Coeficiente de Correlação
+# Coeficiente de Correlacao
 # Sinal x Sinal
 coef_corr(y,y, "SinalxSinal")
 # Sinal x Sinal+Ruido
