@@ -3,11 +3,11 @@ import matplotlib.pyplot as plt
 from scipy import fftpack
 import FIRFilter as ff
 
-f1 = 75
-f2 = 25
-f3 = 32
+f1 = 750
+f2 = 250
+f3 = 3250
 
-fs = 200.0;  # taxa de amostragem
+fs = 6500.0;  # taxa de amostragem
 Ts = 1.0/fs; # intervalo de amostragem
 t = np.arange(0,1,Ts) # vetor de tempo
 s = np.sin(2 * np.pi * f1 * t) + np.sin(2 * np.pi * f2 * t) + np.sin(2 * np.pi * f3 * t) # sinal
@@ -32,7 +32,7 @@ plt.xlabel('Frequencia[Hz]')
 plt.ylabel('Magnitude')
 plt.grid()
 
-filter = ff.FIRFilter(20.0, 35.0, 0.1, 10.0, 20.0, fs) # low_border, high_border, ripple, transition_band, band_pass_attenuation, fs
+filter = ff.FIRFilter(300.0, 500.0, 0.1, 100.0, 60.0, fs) # low_border, high_border, ripple, transition_band, band_pass_attenuation, fs
 filter.fft(len(X))
 S = filter.apply_filter_frequency(X)
 
