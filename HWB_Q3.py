@@ -4,7 +4,7 @@ from scipy import fftpack
 import FIRFilter as ff
 
 f1 = 750
-f2 = 250
+f2 = 2500
 f3 = 3250
 
 fs = 6500.0;  # taxa de amostragem
